@@ -4,7 +4,7 @@
 2018版新小微进件接口逻辑较复杂，步骤如下：
 1、升级CA权威新证书并下载
 2、设置V3密钥
-3、使用https://api.mch.weixin.qq.com/risk/getcertficates接口获取敏感信息加密公钥密文
+3、使用https://api.mch.weixin.qq.com/risk/getcertficates  接口获取敏感信息加密公钥密文
 4、使用此类库 AESGCM.Decrypt() 方法AEAD_AES_256_GCM算法解密获取实际的敏感信息加密公钥
 5、调用主代码传递相关服务商信息发起进件请求
 
