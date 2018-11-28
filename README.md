@@ -2,11 +2,16 @@
 微信支付服务商小微进件接口
 
 2018版新小微进件接口逻辑较复杂，流程如下：
-1、升级CA权威新证书并下载
-2、设置V3密钥
-3、使用https://api.mch.weixin.qq.com/risk/getcertficates  接口获取敏感信息加密公钥密文
-4、使用此类库 AESGCM.Decrypt() 方法AEAD_AES_256_GCM算法解密获取实际的敏感信息加密公钥            
-5、调用主代码传递相关服务商信息发起进件请求
+
+	1、升级CA权威新证书并下载。
+
+	2、设置V3密钥。
+
+	3、使用https://api.mch.weixin.qq.com/risk/getcertficates  接口获取敏感信息加密公钥密文。
+
+	4、使用此类库 AESGCM.Decrypt() 方法AEAD_AES_256_GCM算法解密获取实际的敏感信息加密公钥。
+
+	5、调用主代码传递相关服务商信息发起进件请求。
           
 
 注：进件的身份证、门店照片应事先用图片上传接口上传并获得media_id，为避免编写复杂的C#代码，可使用System.Diagnostics.Process类调用curl.exe上传图片，并读取media_id，接口文档 https://pay.weixin.qq.com/wiki/doc/api/download/img_upload.pdf
